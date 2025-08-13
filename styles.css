@@ -1,0 +1,174 @@
+/* Root variables for colors */
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #333;
+  --accent: #007bff;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-light) url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--bg-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  background: rgba(255 255 255 / 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+#langLabel {
+  font-weight: 600;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+#lang {
+  padding: 6px 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 150px;
+}
+
+/* Button styles */
+button {
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hover effects for enabled buttons */
+button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+/* Specific button colors */
+#resetBtn {
+  background: #28a745; /* green */
+}
+
+#resetBtn:hover:not(:disabled) {
+  background: #1e7e34;
+}
+
+#downloadBtn {
+  background: #17a2b8; /* cyan */
+}
+
+#downloadBtn:hover:not(:disabled) {
+  background: #117a8b;
+}
+
+/* Status text */
+.status {
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 100px;
+  user-select: none;
+}
+
+/* Transcript box */
+.transcript {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  height: 220px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 5px rgb(0 0 0 / 0.1);
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.4;
+  direction: rtl; /* For Arabic text */
+}
+
+/* Footer styling */
+footer {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+/* Icon styling for buttons, labels, footer, and headings */
+button i,
+label i,
+footer i,
+h2 i {
+  margin-inline-end: 8px; /* Supports RTL layout */
+  font-size: 1.2em;
+  vertical-align: middle;
+  color: var(--accent);
+}
+
+/* Mic icon animation while recording */
+.recording i.fa-microphone {
+  color: red;
+  animation: pulse 1s infinite;
+}
+
+/* Pulse animation keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

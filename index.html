@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Speech-to-Text / تسجيل وتحويل الصوت إلى نص</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <main class="container">
+    <h1 id="title">تسجيل صوتي وتحويله إلى نص (لحظي) / Real-time Speech-to-Text</h1>
+
+    <div class="controls">
+      <label for="lang" id="langLabel">
+        <i class="fas fa-globe"></i>
+        اختر اللغة / Select Language:
+      </label>
+      <select id="lang">
+        <option value="ar-SA">العربية (Arabic)</option>
+        <option value="en-US">English</option>
+        <option value="fr-FR">Français (French)</option>
+        <option value="es-ES">Español (Spanish)</option>
+        <option value="de-DE">Deutsch (German)</option>
+      </select>
+
+      <button id="startBtn">
+        <i class="fas fa-microphone"></i>
+        ابدأ التسجيل / Start Recording
+      </button>
+      <button id="stopBtn" disabled>
+        <i class="fas fa-stop"></i>
+        أوقف التسجيل / Stop Recording
+      </button>
+      <button id="resetBtn" disabled>
+        <i class="fas fa-undo-alt"></i>
+        إعادة التسجيل / Restart
+      </button>
+      <button id="downloadBtn" disabled>
+        <i class="fas fa-download"></i>
+        تحميل النص / Download Text
+      </button>
+
+      <span id="status" class="status">مستعد / Ready</span>
+    </div>
+
+    <section class="transcript">
+      <h2 id="transcriptTitle">
+        <i class="fas fa-file-alt"></i>
+        النص الناتج / Transcript
+      </h2>
+      <div id="output" class="output" aria-live="polite"></div>
+    </section>
+
+    <footer>
+      <small>
+        <i class="fas fa-info-circle"></i>
+        Note: For best results, use Google Chrome. / ملاحظة: يُفضل استخدام متصفح جوجل كروم.
+      </small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
